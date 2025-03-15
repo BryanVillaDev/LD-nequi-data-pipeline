@@ -1,1 +1,1 @@
-# Script de notificación en caso de fallo en el DAG
+#podriamos crear un script para enviar notificaciones por email, slack, etc. en caso de algun fallo, podriamos integrarlo al flujo de trabajo de Airflow.
