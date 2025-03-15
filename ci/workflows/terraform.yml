@@ -3,14 +3,18 @@ name: Terraform CI/CD
 on:
   push:
     paths:
-      - "terraform/**"
+      - 'terraform/**'
   pull_request:
     paths:
-      - "terraform/**"
+      - 'terraform/**'
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
     steps:
       - name: Checkout repo
@@ -34,7 +38,7 @@ jobs:
         working-directory: terraform
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
+        run: terraform plan -out=tfplan -var="bucket_name=my-bucket-poc"
         working-directory: terraform
 
       - name: Terraform Apply
