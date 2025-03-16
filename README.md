@@ -46,11 +46,14 @@ El pipeline se estructura de la siguiente manera:
 
 ![arquitectura](arquitetcura.svg)
 
+---
+
 ## Estructura del Repositorio
 
 La organización de carpetas está diseñada para separar responsabilidades y facilitar el mantenimiento y la escalabilidad. La estructura es la siguiente:
 
 La estructura de carpetas está diseñada para separar las responsabilidades y facilitar el mantenimiento y la escalabilidad. La organización se realiza de la siguiente manera:
+
 ## Estructura del Proyecto
 
 ```bash
@@ -84,6 +87,7 @@ Proyecto/
 │   └── workflows/         # Workflows YAML (por ejemplo, terraform.yml)
 └── data/                  # Archivos de datos de ejemplo (CSV)
     └── transactions.csv
+```
 
 ---
 
