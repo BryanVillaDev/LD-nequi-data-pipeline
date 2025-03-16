@@ -44,7 +44,7 @@ El pipeline se estructura de la siguiente manera:
 
 # Diagrama Arquitectura
 
-![arquitectura](image-1.png)
+![arquitectura](arquitetcura.svg)
 
 ## Estructura del Repositorio
 
