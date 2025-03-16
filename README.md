@@ -102,6 +102,11 @@ El proceso de integración y despliegue se automatiza con **GitHub Actions** med
 
 Cada pipeline se activa solo cuando se detectan cambios en las carpetas correspondientes, lo que garantiza una **integración continua sin afectar el entorno de producción**.
 
+mi propuesta para la estrategia de ramas Eficiente en un equipo colaborativo 
+![alt text](gitflow.png)
+
+mi propuesta para el pipline de deploy haciendo revisión de codigo
+![alt text](pullRequest.png)
 ---
 
 ## Principios de SOLID y Clean Architecture
