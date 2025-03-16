@@ -1,0 +1,40 @@
+name: Deploy Airflow DAG to S3
+
+on:
+  push:
+    branches:
+      - dev
+      - staging
+      - main # Producción
+    paths:
+      - "airflow/dags/**" # Solo ejecuta si hay cambios en los DAGs
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Determine environment and S3 bucket
+        id: env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
+            echo "S3_BUCKET=my-bucket-dev" >> $GITHUB_ENV
+          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
+            echo "S3_BUCKET=my-bucket-staging" >> $GITHUB_ENV
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "S3_BUCKET=my-bucket-prod" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy DAGs to S3
+        run: |
+          aws s3 sync airflow/dags s3://$S3_BUCKET/dags/ --delete
