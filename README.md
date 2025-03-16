@@ -51,35 +51,39 @@ El pipeline se estructura de la siguiente manera:
 La organización de carpetas está diseñada para separar responsabilidades y facilitar el mantenimiento y la escalabilidad. La estructura es la siguiente:
 
 La estructura de carpetas está diseñada para separar las responsabilidades y facilitar el mantenimiento y la escalabilidad. La organización se realiza de la siguiente manera:
-├── README.md # Documento final (esta propuesta)
-├── docs # Documentación adicional (diagramas, presentaciones, etc.)
-│ ├── higlevel.png # Diagrama de arquitectura high-level
-│ ├── secuencia.png # Diagrama de secuencia del flujo de datos
-│ └── modelo_operativo.md # Modelo operativo y plan de soporte
-├── airflow # Código y configuraciones de Airflow
-│ ├── dags # Definición de DAGs para la orquestación
-│ │ └── transactions_etl.py
-│ ├── tests # Tests unitarios/integración para los DAGs
-│ │ └── test_transactions_etl.py
-│ └── plugins # Operadores y hooks personalizados (si es necesario)
-├── glue # Código para AWS Glue (PySpark)
-│ ├── scripts # Scripts de transformación y procesamiento
-│ │ └── script_pyspark.py
-│ └── tests # Tests para validar la lógica de transformación en PySpark
-│ └── test_script_pyspark.py
-├── notifications # Módulo de notificaciones
-│ ├── notifier.py # Clase Notifier con métodos para email, Slack y Teams
-│ └── tests # Tests para el módulo de notificaciones
-│ └── test_notifier.py
-├── terraform # Configuración de infraestructura como código
-│ ├── main.tf # Definición de recursos (S3, IAM, etc.)
-│ ├── variables.tf
-│ ├── outputs.tf
-│ └── modules # Módulos reutilizables
-├── ci # Configuraciones y scripts de CI/CD con GitHub Actions
-│ └── workflows # Workflows YAML (por ejemplo, terraform.yml)
-└── data # Archivos de datos de ejemplo (CSV)
-└── transactions.csv
+## Estructura del Proyecto
+
+```bash
+Proyecto/
+├── README.md              # Documento final (esta propuesta)
+├── docs/                  # Documentación adicional (diagramas, presentaciones, etc.)
+│   ├── higlevel.png       # Diagrama de arquitectura high-level
+│   ├── secuencia.png      # Diagrama de secuencia del flujo de datos
+│   └── modelo_operativo.md # Modelo operativo y plan de soporte
+├── airflow/               # Código y configuraciones de Airflow
+│   ├── dags/              # Definición de DAGs para la orquestación
+│   │   └── transactions_etl.py
+│   ├── tests/             # Tests unitarios/integración para los DAGs
+│   │   └── test_transactions_etl.py
+│   └── plugins/           # Operadores y hooks personalizados (si es necesario)
+├── glue/                  # Código para AWS Glue (PySpark)
+│   ├── scripts/           # Scripts de transformación y procesamiento
+│   │   └── script_pyspark.py
+│   ├── tests/             # Tests para validar la lógica de transformación en PySpark
+│   │   └── test_script_pyspark.py
+├── notifications/         # Módulo de notificaciones
+│   ├── notifier.py        # Clase Notifier con métodos para email, Slack y Teams
+│   ├── tests/             # Tests para el módulo de notificaciones
+│   │   └── test_notifier.py
+├── terraform/             # Configuración de infraestructura como código
+│   ├── main.tf            # Definición de recursos (S3, IAM, etc.)
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── modules/           # Módulos reutilizables
+├── ci/                    # Configuraciones y scripts de CI/CD con GitHub Actions
+│   └── workflows/         # Workflows YAML (por ejemplo, terraform.yml)
+└── data/                  # Archivos de datos de ejemplo (CSV)
+    └── transactions.csv
 
 ---
 
