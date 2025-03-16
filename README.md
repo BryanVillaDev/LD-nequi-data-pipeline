@@ -103,6 +103,7 @@ El proceso de integración y despliegue se automatiza con **GitHub Actions** med
 Cada pipeline se activa solo cuando se detectan cambios en las carpetas correspondientes, lo que garantiza una **integración continua sin afectar el entorno de producción**.
 
 ### Almacenamiento de DAGs y Jobs
+
 - Los **DAGs de Airflow** y los **scripts de transformación en PySpark** se almacenan en **buckets S3 específicos por ambiente** (`dev`, `staging` y `prod`).
 - Airflow y Glue acceden a estos scripts desde sus respectivos buckets para garantizar **versionado, aislamiento y seguridad**.
 - La estructura en S3 es la siguiente:
@@ -116,11 +117,11 @@ s3://ld-poc-nequi-prod/dags/
 s3://ld-poc-nequi-prod/jobs/
 ```
 
-# propuesta para la estrategia de ramas Eficiente en un equipo colaborativo
+## propuesta para la estrategia de ramas Eficiente en un equipo colaborativo
 
 ![alt text](gitflow.png)
 
-# propuesta para el pipline de deploy haciendo revisión de codigo
+## propuesta para el pipline de deploy haciendo revisión de codigo
 
 ![alt text](pullRequest.png)
 

@@ -113,7 +113,69 @@ Este modelo operativo define cómo vamos a manejar el pipeline de datos, asegura
 - **Capacitaciones**: Formación periódica para nuevos integrantes.  
 - **Protocolos Documentados**: Guías de operación, despliegue y manejo de incidencias.  
 
-## 9. Conclusión
+
+
+## 9 Gestión del Pipeline con Scrum y Priorización Eisenhower
+
+Pa organizar bien el trabajo en el pipeline usamos **Scrum** (para que el equipo tenga claro que hacer en cada sprint) y la **Matriz de Eisenhower** (para no perder tiempo en cosas que no aportan valor real y enfocarnos en lo que de verdad importa).
+
+## 🔹 **Scrum en el Pipeline**  
+
+La idea es trabajar en **sprints de 2 semanas**, asi aseguramos que siempre hay avances sin meter cambios a lo loco que rompan todo.
+
+### **🔹 Roles en Scrum:**  
+- **Product Owner (PO)**: Define que se hace en cada sprint y que es lo más importante pa el negocio.  
+- **Líder Técnico / Líder de Datos**:  
+  - Se encarga de que la arquitectura y el código sean solidos.  
+  - Revisa Pull Requests y asegura que todo pase los tests y validaciones.  
+  - Evita que se hagan cosas sin sentido y que el equipo no pierda tiempo en tareas inútiles.  
+- **Equipo de Desarrollo**: Mete mano al código, mejora el pipeline y mantiene todo andando.  
+- **Stakeholders (Usuarios del pipeline)**: Dan feedback sobre que funciona y que no.  
+
+### **🔹 Eventos en Scrum:**  
+- **Daily Standup:** 15 min pa ver avances y si hay bloqueos.  
+- **Sprint Planning:** Se define que se hace en las próximas 2 semanas podemos usar History points con fibonaci para mejorar la planificación.  
+- **Sprint Review:** Se presenta lo que se terminó a los interesados.  
+- **Sprint Retro:** Se analiza que mejorar pa la siguiente ronda.  
+
+---
+
+## **Priorización con la Matriz de Eisenhower**  
+
+Pa que no nos llenemos de tareas sin sentido, usamos la **Matriz de Eisenhower**, que básicamente nos dice **qué hacer ya**, **qué se puede planear**, **qué se delega** y **qué se manda a la basura**.
+
+### **🔹 Ejemplos de qué cae en cada categoría**:  
+
+- **Urgente & Importante:**  
+  - Airflow dejó de ejecutar DAGs → **Se arregla ya mismo.**  
+  - Fallo en Glue que rompe el pipeline → **No se espera, se arregla.**  
+
+- **No Urgente pero Importante:**  
+  - Optimizar tiempos en Airflow → **Se mete en el próximo sprint.**  
+  - Refactorizar código pa que sea más mantenible → **Se agenda.**  
+
+- **Urgente pero No Importante:**  
+  - Analista pide ayuda con una consulta SQL → **Se delega al equipo de BI.**  
+  - Soporte a usuarios por una duda simple → **Se responde cuando se pueda.**  
+
+- **Ni Urgente ni Importante:**  
+  - Probar una tecnología nueva solo por curiosidad → **Se guarda pa después.**  
+  - Un usuario quiere un dashboard experimental sin necesidad real → **Baja prioridad.**  
+
+---
+
+## **Conclusion**  
+Con **Scrum**, nos organizamos sin volarnos la cabeza con tareas al azar.  
+Con **Eisenhower**, no perdemos tiempo en cosas que no aportan nada.  
+El **Líder Técnico/Líder de Datos** se encarga de que el codigo y la arquitectura no se vuelvan un desastre.  
+Así, se trabaja bien sin que cada semana parezca un incendio nuevo. 
+
+---
+
+## **Gráfico de la Matriz de Eisenhower**  
+![alt text](Eisenhower.png)
+
+## 10. Conclusión
 
 Este modelo operativo nos permite tener control total sobre el pipeline, asegurando que todo fluya sin problemas, con buenas prácticas, monitoreo y automatización. La clave está en la mejora continua, con revisiones regulares y optimización en cada etapa.
 
