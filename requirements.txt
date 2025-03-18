@@ -1,0 +1,18 @@
+# Dependencias para LD-nequi-data-pipeline
+
+# Airflow para orquestación
+apache-airflow>=2.2.0
+apache-airflow-providers-amazon>=2.0.0
+
+# PySpark para procesos ETL con AWS Glue
+pyspark>=3.3.0
+
+# Boto3 para interactuar con AWS
+boto3>=1.26.0
+
+
+# Gestión de variables de entorno
+python-dotenv>=0.20.0
+
+# Framework de testing
+pytest>=7.0.0
